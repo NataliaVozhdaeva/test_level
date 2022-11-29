@@ -1,0 +1,35 @@
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.link {
+  text-decoration: none;
+
+  &:visited {
+    color: currentColor;
+  }
+}
+
+.header {
+  width: 80vw;
+  margin: auto;
+}
+
+.navigation {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10%;
+
+  &-item {
+    &:hover {
+      color: violet;
+    }
+
+    &:first-child {
+      flex-grow: 1;
+    }
+  }
+}

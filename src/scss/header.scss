@@ -63,10 +63,6 @@ $main-yellow: #e0a602;
   align-self: center;
 }
 
-.nav__mobile {
-  display: none;
-}
-
 .hero {
   width: 70vw;
   margin: auto;
@@ -142,6 +138,7 @@ $main-yellow: #e0a602;
     margin-top: 20px;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
 
   .nav__mobile {
@@ -162,8 +159,27 @@ $main-yellow: #e0a602;
     );
   }
 
+  .nav__mobile:hover {
+    background: linear-gradient(
+      $main-yellow 20%,
+      transparent 20%,
+      transparent 40%,
+      $main-yellow 40%,
+      $main-yellow 60%,
+      transparent 60%,
+      transparent 80%,
+      $main-yellow 80%
+    );
+  }
+
   .navigation {
-    display: none;
+    flex-direction: column;
+    row-gap: 20px;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    min-width: auto;
+    z-index: 2;
   }
 
   .hero {

@@ -23,20 +23,19 @@ function buildSass() {
     .pipe(browserSync.stream());
 }
 
-/* function buildJs() {
-  return (
-    src('src/js/main.js')
-      .pipe(dest('src/js'))
-      .pipe(browserSync.stream())
-  );
-} */
+function buildJs() {
+  return src('src/scripts/main.js')
+    .pipe(dest('src/js'))
+    .pipe(dest('dist/js'))
+    .pipe(browserSync.stream());
+}
 
 function html() {
   return src('src/**/*.html').pipe(dest('dist/')).pipe(browserSync.stream());
 }
 
 function serve() {
-  //watch('src/js/**/*.js', buildJs);
+  watch('src/scripts/**/*.js', buildJs);
   watch('src/scss/**/*.scss', buildSass);
   watch('src/**/*.html', html);
 }
@@ -50,8 +49,5 @@ function cleanDist() {
 }
 
 exports.clean = series(cleanDist);
-exports.build = series(cleanDist, buildSass, /* buildJs, */ html, copy);
-exports.default = series(
-  [buildSass /* , buildJs */],
-  parallel(browsersync, serve)
-);
+exports.build = series(cleanDist, buildSass, buildJs, html, copy);
+exports.default = series([buildSass, buildJs], parallel(browsersync, serve));

@@ -2,11 +2,12 @@ $main-violet: #7b1160;
 $main-yellow: #e0a602;
 
 .main {
-  width: 70vw;
   margin: auto;
 }
 
 .composition {
+  width: 70vw;
+  margin: 0 auto 100px;
   position: relative;
   background: radial-gradient(
       50% 300%,
@@ -80,6 +81,83 @@ $main-yellow: #e0a602;
   }
 }
 
+.feedback {
+  width: 95vw;
+  position: relative;
+  padding: 25px 100px 50px;
+  margin: auto;
+  box-sizing: border-box;
+
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(224, 166, 2, 0.1) 10px,
+    rgba(224, 166, 2, 0.1) 15px,
+    #000 15px,
+    #000 25px
+  );
+
+  &-title {
+    font-size: 32px;
+  }
+
+  &-list {
+    width: 50%;
+    display: flex;
+    margin: auto;
+  }
+
+  &-photo {
+    width: 100%;
+  }
+
+  &-author {
+    text-transform: uppercase;
+  }
+
+  &-text {
+    text-align: justify;
+  }
+
+  &-btn {
+    width: 80px;
+    height: 80px;
+    background-color: $main-violet;
+    border-radius: 50%;
+    position: absolute;
+    top: 400px;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 25px;
+      left: 20px;
+      box-sizing: border-box;
+      border: 5px solid #fff;
+      transform: rotate(45deg);
+    }
+
+    &__next {
+      right: 100px;
+
+      &::after {
+        border-bottom: none;
+        border-left: none;
+      }
+    }
+
+    &__prev {
+      &::after {
+        border-top: none;
+        border-right: none;
+        left: 30px;
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 1550px) {
   .composition {
     position: relative;
@@ -140,6 +218,30 @@ $main-yellow: #e0a602;
       &:nth-child(2n)::before {
         left: calc(50% - 50px);
       }
+    }
+  }
+
+  .feedback {
+    padding-bottom: 150px;
+
+    &-list {
+      width: 100%;
+    }
+
+    &-btn {
+      margin-top: 50px;
+      top: calc(100% - 150px);
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .feedback {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    &-btn__next {
+      right: 30px;
     }
   }
 }

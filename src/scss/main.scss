@@ -1,0 +1,145 @@
+$main-violet: #7b1160;
+$main-yellow: #e0a602;
+
+.main {
+  width: 70vw;
+  margin: auto;
+}
+
+.composition {
+  position: relative;
+  background: radial-gradient(
+      50% 300%,
+      #000 25%,
+      transparent 25%,
+      transparent 40%,
+      #000 40%
+    ),
+    linear-gradient(transparent 49.6%, $main-yellow 50%, transparent 50.4%),
+    linear-gradient(
+      38deg,
+      transparent 49.8%,
+      $main-yellow 50%,
+      transparent 50.2%
+    ),
+    linear-gradient(
+      -38deg,
+      transparent 49.8%,
+      $main-yellow 50%,
+      transparent 50.2%
+    );
+
+  &-container {
+    position: absolute;
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    justify-content: center;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 150px 60%;
+  }
+
+  &-item {
+    width: 20%;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(
+      rgba(123, 17, 96, 0.5) 33%,
+      rgba(123, 17, 96, 0)
+    );
+
+    &::before {
+      content: '';
+      background: url('../img/bg/ingredient\ 1.jpeg') no-repeat center;
+      background-size: cover;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -100px;
+      border-radius: 50%;
+    }
+
+    &:nth-child(2n)::before {
+      left: -100px;
+      background: url('../img/bg/ingredient\ 2.jpeg') no-repeat center;
+      background-size: cover;
+    }
+  }
+}
+
+@media only screen and (max-width: 1550px) {
+  .composition {
+    position: relative;
+    background: radial-gradient(
+        50% 300%,
+        #000 25%,
+        transparent 25%,
+        transparent 40%,
+        #000 40%
+      ),
+      linear-gradient(transparent 49.6%, $main-yellow 50%, transparent 50.4%),
+      linear-gradient(
+        50deg,
+        transparent 49.8%,
+        $main-yellow 50%,
+        transparent 50.2%
+      ),
+      linear-gradient(
+        -50deg,
+        transparent 49.8%,
+        $main-yellow 50%,
+        transparent 50.2%
+      );
+  }
+}
+
+@media only screen and (max-width: 961px) {
+  .composition {
+    position: relative;
+    background: none;
+    display: flex;
+    flex-direction: column;
+
+    &-container {
+      position: relative;
+      width: 200px;
+      height: auto;
+      order: 2;
+      margin-top: 50px;
+    }
+
+    &-img {
+      display: none;
+    }
+
+    &-list {
+      justify-content: center;
+    }
+
+    &-item {
+      width: auto;
+
+      &::before {
+        top: -120px;
+        left: calc(50% - 50px);
+      }
+
+      &:nth-child(2n)::before {
+        left: calc(50% - 50px);
+      }
+    }
+  }
+}

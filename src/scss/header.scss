@@ -192,3 +192,26 @@ $main-yellow: #e0a602;
     font-size: 2em;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .header {
+    margin-bottom: 50px;
+  }
+
+  .hero {
+    padding: 0;
+    &-video {
+      display: none;
+    }
+  }
+
+  .nav-container {
+    margin-bottom: 100px;
+  }
+
+  .navigation {
+    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

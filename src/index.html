@@ -218,7 +218,45 @@
       </section>
     </main>
     <footer class="footer">
-      <form action="" class="orderform"></form>
+      <h2 class="footer-title">LevelUp</h2>
+      <div class="footer-timer"></div>
+      <section class="price">
+        <img
+          src="./img/content/prod.png"
+          alt=""
+          class="price-photo"
+          width="150"
+        />
+        <div class="price-new">
+          <h3 class="price-title price-title__new">
+            New price<br />
+            99.99
+          </h3>
+        </div>
+        <div class="price-old">
+          <h5 class="price-title price-title__old">
+            Old price<br />
+            100.00
+          </h5>
+        </div>
+      </section>
+      <form action="" class="orderform" id="orderform">
+        <label for="" class="label-name"
+          >Enter your name <br />
+          <input type="text" class="orderform-name orderform-input" />
+          <span class="example">ex: Jon Dow</span>
+        </label>
+        <label for="" class="label-tel"
+          >Your tel-number<br />
+          <input
+            type="tel"
+            class="orderform-tel orderform-input"
+            onkeyup="this.value = this.value.replace(/[^\d]/g,'');"
+          />
+          <span class="example">ex: 8123456678890</span>
+        </label>
+        <button class="btn orderform-btn order-btn" type="submit">Order</button>
+      </form>
     </footer>
     <script src="./scripts/main.js"></script>
   </body>

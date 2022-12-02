@@ -97,7 +97,7 @@ $main-yellow: #e0a602;
   );
 
   &-title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   &-list {
@@ -176,8 +176,6 @@ $main-yellow: #e0a602;
     grid-row: 1/2;
     font-size: 18px;
     text-align: justify;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 
   &-list {
@@ -195,6 +193,7 @@ $main-yellow: #e0a602;
     grid-column: 2/3;
     grid-row: 1/2;
     margin-top: auto;
+    margin-bottom: 50px;
     text-align: center;
   }
 }

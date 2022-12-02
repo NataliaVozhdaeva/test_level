@@ -121,6 +121,13 @@ $main-yellow: #e0a602;
   display: none;
 }
 
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
 @keyframes price-animation {
   from {
     text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;

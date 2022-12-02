@@ -33,16 +33,16 @@
         <button class="btn nav__mobile" type="button"></button>
         <ul class="navigation list">
           <li class="navigation-item list-item">
-            <a href="" class="navigation-link link">Composition</a>
+            <a href="#composition" class="navigation-link link">Composition</a>
           </li>
           <li class="navigation-item list-item">
-            <a href="" class="navigation-link link">Feedback</a>
+            <a href="#feedback" class="navigation-link link">Feedback</a>
           </li>
           <li class="navigation-item list-item">
-            <a href="" class="navigation-link link">About&nbspus</a>
+            <a href="#promo" class="navigation-link link">About&nbspus</a>
           </li>
           <li class="navigation-item list-item">
-            <a href="" class="navigation-link link">Order</a>
+            <a href="#orderform" class="navigation-link link">Order</a>
           </li>
         </ul>
       </nav>
@@ -68,7 +68,9 @@
             <li class="hero-item list-item">Feature 2</li>
             <li class="hero-item list-item">Feature 3</li>
           </ul>
-          <a href="" class="hero-btn link order-btn" type="button">Order</a>
+          <a href="#orderform" class="hero-btn link order-btn" type="button"
+            >Order</a
+          >
         </div>
       </div>
     </header>
@@ -83,7 +85,10 @@
             class="composition-img"
             width="150"
           />
-          <a href="" class="composition-btn link order-btn" type="button"
+          <a
+            href="#orderform"
+            class="composition-btn link order-btn"
+            type="button"
             >Order</a
           >
         </div>
@@ -214,12 +219,16 @@
             nesciunt explicabo vel repellat.
           </li>
         </ul>
-        <a class="btn promo-btn order-btn">Order</a>
+        <a href="#orderform" class="link promo-btn order-btn">Order</a>
       </section>
     </main>
     <footer class="footer">
       <h2 class="footer-title">LevelUp</h2>
-      <div class="footer-timer"></div>
+      <section class="footer-timer timer" id="timer">
+        <span class="minutes"></span><br />
+        <span class="separate">:</span><br />
+        <span class="seconds"></span>
+      </section>
       <section class="price">
         <img
           src="./img/content/prod.png"
@@ -253,7 +262,7 @@
             class="orderform-tel orderform-input"
             onkeyup="this.value = this.value.replace(/[^\d]/g,'');"
           />
-          <span class="example">ex: 8123456678890</span>
+          <span class="example">ex: 81234566789</span>
         </label>
         <button class="btn orderform-btn order-btn" type="submit">Order</button>
       </form>

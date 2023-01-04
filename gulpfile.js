@@ -3,7 +3,6 @@ const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
-//const rename = require('gulp-rename');
 
 function browsersync() {
   browserSync.init({
@@ -24,7 +23,7 @@ function buildSass() {
 }
 
 function buildJs() {
-  return src('src/scripts/main.js')
+  return src('src/js/main.js')
     .pipe(dest('src/js'))
     .pipe(dest('dist/js'))
     .pipe(browserSync.stream());
@@ -40,8 +39,12 @@ function serve() {
   watch('src/**/*.html', html);
 }
 
-function copy() {
-  return src('src/img/**/*.*').pipe(dest('dist'));
+function copyimg() {
+  return src('src/img/**/*.*').pipe(dest('dist/img/'));
+}
+
+function copyvideo() {
+  return src('src/video/**/*.*').pipe(dest('dist/video/'));
 }
 
 function cleanDist() {
@@ -49,5 +52,5 @@ function cleanDist() {
 }
 
 exports.clean = series(cleanDist);
-exports.build = series(cleanDist, buildSass, buildJs, html, copy);
+exports.build = series(cleanDist, buildSass, buildJs, html, copyimg, copyvideo);
 exports.default = series([buildSass, buildJs], parallel(browsersync, serve));

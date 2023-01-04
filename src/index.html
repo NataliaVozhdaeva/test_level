@@ -39,7 +39,7 @@
             <a href="#feedback" class="navigation-link link">Feedback</a>
           </li>
           <li class="navigation-item list-item">
-            <a href="#promo" class="navigation-link link">About&nbspus</a>
+            <a href="#promo" class="navigation-link link">About&nbsp;us</a>
           </li>
           <li class="navigation-item list-item">
             <a href="#orderform" class="navigation-link link">Order</a>
@@ -68,9 +68,7 @@
             <li class="hero-item list-item">Feature 2</li>
             <li class="hero-item list-item">Feature 3</li>
           </ul>
-          <a href="#orderform" class="hero-btn link order-btn" type="button"
-            >Order</a
-          >
+          <a href="#orderform" class="hero-btn link order-btn">Order</a>
         </div>
       </div>
     </header>
@@ -85,12 +83,7 @@
             class="composition-img"
             width="150"
           />
-          <a
-            href="#orderform"
-            class="composition-btn link order-btn"
-            type="button"
-            >Order</a
-          >
+          <a href="#orderform" class="composition-btn link order-btn">Order</a>
         </div>
         <ul class="composition-list list">
           <li class="composition-item list-item">
@@ -188,6 +181,7 @@
         </button>
       </section>
       <section class="promo" id="promo">
+        <h2 hidden>Why we?</h2>
         <img
           src="./img/content/doctor&prod.png"
           alt="doctor recommend"
@@ -224,12 +218,13 @@
     </main>
     <footer class="footer">
       <h2 class="footer-title">LevelUp</h2>
-      <section class="footer-timer timer" id="timer">
+      <div class="footer-timer timer" id="timer">
         <span class="minutes"></span><br />
         <span class="separate">:</span><br />
         <span class="seconds"></span>
-      </section>
+      </div>
       <section class="price">
+        <h2 class="special-offer" hidden>Special offer</h2>
         <img
           src="./img/content/prod.png"
           alt=""
@@ -249,17 +244,18 @@
           </h5>
         </div>
       </section>
-      <form action="" class="orderform" id="orderform">
-        <label for="" class="label-name"
+      <form action="mailto:mail@mail.ru" class="orderform" id="orderform">
+        <label for="text" class="label-name"
           >Enter your name <br />
-          <input type="text" class="orderform-name orderform-input" />
+          <input class="orderform-name orderform-input" type="text" id="text" />
           <span class="example">ex: Jon Dow</span>
         </label>
-        <label for="" class="label-tel"
+        <label for="tel" class="label-tel"
           >Your tel-number<br />
           <input
-            type="tel"
             class="orderform-tel orderform-input"
+            type="tel"
+            id="tel"
             onkeyup="this.value = this.value.replace(/[^\d]/g,'');"
           />
           <span class="example">ex: 81234566789</span>

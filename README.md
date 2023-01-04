@@ -1,5 +1,7 @@
 Тестовое задание: верстка Landing-page
 
+Посмотреть: https://nataliavozhdaeva.github.io/test_level/dist/
+
 <ul>
 <li>Верстка: flex, grid, position</li>
 <li>Есть адаптив + верстка резиновая, благодаря чему лэндинг отображается корректно и в промежутках между брейкпоинтами</li>

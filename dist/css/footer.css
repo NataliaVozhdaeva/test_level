@@ -1,0 +1,135 @@
+.footer {
+  background-color: rgba(123, 17, 96, 0.3);
+  width: 100vw;
+  min-height: 100px;
+  padding: 25px 0 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.footer-title {
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+}
+.footer-timer {
+  background-color: #000;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 50px;
+}
+
+.price {
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 75px 50px;
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, 60px);
+  align-items: center;
+}
+.price-photo {
+  grid-column: 1/2;
+  grid-row: 1/6;
+  width: 100%;
+  height: auto;
+}
+.price-new {
+  grid-column: 2/3;
+  grid-row: 1/4;
+}
+.price-old {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.price-old:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top right, transparent 49%, red 50%, transparent 51%), linear-gradient(to top left, transparent 49%, red 50%, transparent 51%);
+}
+.price-title {
+  text-align: center;
+}
+.price-title__new {
+  font-size: 30px;
+  animation: price-animation 3s ease-in-out infinite;
+}
+.price-title__old {
+  font-size: 16px;
+  position: relative;
+}
+
+.orderform {
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 105px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.orderform-input {
+  width: 100%;
+  min-height: 50px;
+}
+.orderform-input:focus ~ .example {
+  display: inline-block;
+}
+
+.label-tel {
+  position: relative;
+}
+
+.label-name {
+  position: relative;
+}
+
+.example {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  color: #7b1160;
+  display: none;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+@keyframes price-animation {
+  from {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  }
+  50% {
+    text-shadow: 2px 2px 5px red, 0 0 1em blue, 0 0 1em blue;
+  }
+  100% {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .footer {
+    flex-direction: column;
+    row-gap: 50px;
+    align-items: center;
+  }
+  .price {
+    width: 75vw;
+  }
+  .orderform {
+    width: 75vw;
+    row-gap: 30px;
+  }
+}
